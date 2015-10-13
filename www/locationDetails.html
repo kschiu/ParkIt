@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/locationController.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="MainCtrl">
+
+        <div class="bar bar-header bar-positive">
+      <button class="button button-icon icon ion-ios-arrow-thin-left"> Back</button>
+      <h1 class="title">{{location.address}}</h1>
+    </div>
+<!-- 
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-clear">
+        <i class="ion-ios-arrow-thin-left"></i> Back
+      </ion-nav-back-button>
+    </ion-nav-bar>
+ -->
+    <ion-nav-view>
+    <ion-view view-title= "{{location.address}}">
+  <ion-content class="has-header">
+
+    <div class= "row">
+      <div class="padding">
+          <h4>{{location.address}}</h4>
+          <h4>{{location.city}}, {{location.state}} {{location.zip_code}}</h4> 
+
+          <p class="subheading"><strong>Garage</strong></p>
+          <p>5 minute walk from campus</p> <br>
+
+          <p><strong># CARS: </strong>2</p>
+          <p><strong>CAR TYPES: </strong>Sedan, SUV</p> 
+          
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+</ion-nav-view>
+
+    <ion-footer-bar align-title="middle">
+      <div class="tabs-striped tabs-color-positive">
+        <div class="tabs tabs-icon-top">
+          <a class="tab-item" href="#">
+            <i class="icon ion-home"></i>
+            Home
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-model-s"></i>
+            My Parking
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-android-person"></i>
+            Profile
+          </a>
+        </div>
+      </div>
+    </ion-footer-bar>
+  </body>
+</html>
