@@ -1,0 +1,12 @@
+<ion-view view-title= "Listings Near You">
+  <ion-content class="has-header">
+
+    <div class="list" ng-repeat="listing in collection track by listing.id">
+      <a class="item item-thumbnail-left" href="#">
+        <img src="cover.jpg">
+        <h2>{{listing.location.street_1}}</h2>
+        <p>{{listing.location.type}}</p>
+      </a>
+
+  </ion-content>
+</ion-view>

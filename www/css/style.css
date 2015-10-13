@@ -1,1 +1,21 @@
 /* Empty. Add your own CSS if you like */
+
+.subheading {
+	font-size: 110%;
+}
+
+#loginbg {
+	background-color: #387ef5;
+} 
+
+#car {
+	width: 75%;
+}
+
+#logo {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
