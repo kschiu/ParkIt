@@ -10,7 +10,7 @@ angular.module('app', ['ionic', 'ngResource'])
 
   $scope.userData = {};
   $scope.newUser = function() {
-    var newUser = new User($scope.locData);
+    var newUser = new User($scope.userData);
     console.log(newUser);
     newUser.$save();
   }
