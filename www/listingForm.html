@@ -35,17 +35,45 @@
       <ion-content class="has-header">
 
         <div class= "row">
-          <div class="padding">
-              <h4>{{location.address}}</h4>
-              <h4>{{location.city}}, {{location.state}} {{location.zip_code}}</h4> 
-
-              <p class="subheading"><strong>Garage</strong></p>
-              <p>5 minute walk from campus</p> <br>
-
-              <p><strong># CARS: </strong>2</p>
-              <p><strong>CAR TYPES: </strong>Sedan, SUV</p> 
-              
+          <form id="listing" ng-submit="newListing()">
+            <div class="list" ng-repeat="location in collection track by location.id">
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Location
+                </div>
+                <select>
+                  <option>{{location.street_1}}</option>
+                </select>
+              </label>
+              <div class="item item-divider">Rates (at least 1 is required)</div>
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Half Day ($)</span>
+                <input type="text" placeholder="5">
+              </label>
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Full Day ($)</span>
+                <input type="text" placeholder="10">
+              </label>
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Week ($)</span>
+                <input type="text" placeholder="45">
+              </label>
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Month ($)</span>
+                <input type="text" placeholder="120">
+              </label>
+              <div class="item item-divider">Availability Dates</div>
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">Start</span>
+                <input type="date" placeholder="10/19/2015">
+              </label>
+              <label class="item item-input item-stacked-label">
+                <span class="input-label">End</span>
+                <input type="date" placeholder="10/20/2015">
+              </label>
             </div>
+            <h1 class="title"> <button type="submit" class="button button-full button-positive"> Create Listing </button> </h1>
+          </form>
         </div>
 
       </ion-content>

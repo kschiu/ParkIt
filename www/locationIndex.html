@@ -26,27 +26,21 @@
   </head>
   <body ng-app="app" ng-controller="MainCtrl">
 
-        <div class="bar bar-header bar-positive">
+    <div class="bar bar-header bar-positive">
       <button class="button button-icon icon ion-ios-arrow-thin-left"> Back</button>
-      <h1 class="title">{{location.address}}</h1>
+      <h1 class="title">My Locations</h1>
     </div>
 
     <ion-nav-view>
       <ion-content class="has-header">
 
-        <div class= "row">
-          <div class="padding">
-              <h4>{{location.address}}</h4>
-              <h4>{{location.city}}, {{location.state}} {{location.zip_code}}</h4> 
-
-              <p class="subheading"><strong>Garage</strong></p>
-              <p>5 minute walk from campus</p> <br>
-
-              <p><strong># CARS: </strong>2</p>
-              <p><strong>CAR TYPES: </strong>Sedan, SUV</p> 
-              
-            </div>
-        </div>
+        <div class="list" ng-repeat="listing in collection track by listing.id">
+          <a class="item item-thumbnail-left" href="#">
+            <img src="cover.jpg">
+            <h2>{{listing.location.street_1}}</h2>
+            <p>{{listing.location.type}}</p>
+          </a>
+        </div>    
 
       </ion-content>
     </ion-nav-view>
